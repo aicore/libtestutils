@@ -1,6 +1,6 @@
 /*global describe, it*/
 import * as chai from 'chai';
-import {install_mysql, uninstall_mysql} from "../../../src/setupIntegrationTest/install.js";
+import {installMysql, uninstallMysql} from "../../../src/setupIntegrationTest/install.js";
 import child_process from "child_process";
 
 let expect = chai.expect;
@@ -10,7 +10,7 @@ describe('This will test src/setupIntegrationTest/install.js', function () {
         child_process.exec = function (cmd, callback) {
             callback(null, 'success', null);
         };
-        const newVar = await install_mysql();
+        const newVar = await installMysql();
         expect(newVar).to.eql('stdout: success');
         child_process.exec = savedExec;
     });
@@ -19,7 +19,7 @@ describe('This will test src/setupIntegrationTest/install.js', function () {
         child_process.exec = function (cmd, callback) {
             callback(null, 'success', null);
         };
-        const newVar = await uninstall_mysql();
+        const newVar = await uninstallMysql();
         expect(newVar).to.eql('stdout: success');
         child_process.exec = savedExec;
 
