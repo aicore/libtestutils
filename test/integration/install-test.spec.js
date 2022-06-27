@@ -1,6 +1,6 @@
 /*global describe, it*/
 import * as chai from 'chai';
-import {install_mysql, uninstall_mysql} from "../../src";
+import {install_mysql, uninstall_mysql} from "../../src/index.js";
 
 let expect = chai.expect;
 
