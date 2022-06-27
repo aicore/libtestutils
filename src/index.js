@@ -15,4 +15,4 @@
  * with this program. If not, see https://opensource.org/licenses/AGPL-3.0.
  *
  */
-export {install_mysql,  uninstall_mysql} from './setupIntegrationTest/install.js';
+export {installMysql,  uninstallMysql} from './setupIntegrationTest/install.js';

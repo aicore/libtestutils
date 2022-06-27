@@ -5,7 +5,7 @@ import {execShell} from '../utils/shellUtils.js';
     *
 */
 
-export function install_mysql() {
+export function installMysql() {
     return execShell('sudo apt-get install mysql-server -y');
 }
 
@@ -14,6 +14,6 @@ export function install_mysql() {
     *
 */
 
-export function uninstall_mysql() {
+export function uninstallMysql() {
     return execShell('sudo apt-get remove mysql-server -y');
 }
