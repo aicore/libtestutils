@@ -17,3 +17,6 @@ export function installMysql() {
 export function uninstallMysql() {
     return execShell('sudo apt-get remove mysql-server -y');
 }
+export function isMySqlActive(){
+    return execShell('sudo systemctl is-active mysql');
+}
