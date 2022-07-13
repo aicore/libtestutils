@@ -8,7 +8,7 @@ export async function setUpMySQL(configs) {
     if (!isString(configs.user)) {
         throw new Error('Please provide valid Database user');
     }
-    if (isString(configs.password)) {
+    if (!isString(configs.password)) {
         throw new Error('Please provide valid password for database');
     }
     await execShell(`sudo mysql -u root -e 'CREATE DATABASE ${configs.database};'`);
