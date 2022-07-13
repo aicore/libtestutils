@@ -13,11 +13,16 @@ describe('integration tests for libtestsUtils',function (){
     });
     it('Setup database should pass', async function () {
         const retVal = await installMysql();
-        const mysqlStatus = await isMySqlActive();
-        console.log(mysqlStatus);
-        expect(retVal.length).gt(0);
-        const configs = getMySqlConfigs();
-        await setUpMySQL(configs);
+        try {
+            const mysqlStatus = await isMySqlActive();
+            console.log(mysqlStatus);
+            expect(retVal.length).gt(0);
+            const configs = getMySqlConfigs();
+            await setUpMySQL(configs);
+
+        } catch (e) {
+            console.log(e.toString());
+        }
 
     });
     it('uninstall mysql test', async function () {
