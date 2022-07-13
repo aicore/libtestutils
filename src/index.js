@@ -16,3 +16,4 @@
  *
  */
 export {installMysql,  uninstallMysql} from './setupIntegrationTest/install.js';
+export {setUpMySQL} from './setupIntegrationTest/userMangement.js';
