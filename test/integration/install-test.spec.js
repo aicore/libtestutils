@@ -2,7 +2,7 @@
 import * as chai from 'chai';
 import {installMysql, setUpMySQL, uninstallMysql} from "../../src/index.js";
 import {getMySqlConfigs} from "@aicore/libmysql/src/utils/configs.js";
-import {isMySqlActive} from "../../src/setupIntegrationTest/install.js";
+import {isMySqlActive, startMySql} from "../../src/setupIntegrationTest/install.js";
 
 let expect = chai.expect;
 
@@ -14,8 +14,10 @@ describe('integration tests for libtestsUtils',function (){
     it('Setup database should pass', async function () {
         const retVal = await installMysql();
         try {
-            const mysqlStatus = await isMySqlActive();
-            console.log(mysqlStatus);
+            //const mysqlStatus = await isMySqlActive();
+            // console.log(mysqlStatus);
+            const activateStatus = await startMySql();
+            console.log(activateStatus);
             expect(retVal.length).gt(0);
             const configs = getMySqlConfigs();
             await setUpMySQL(configs);
