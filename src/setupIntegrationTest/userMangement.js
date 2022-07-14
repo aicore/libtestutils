@@ -11,9 +11,9 @@ export async function setUpMySQL(configs) {
     if (!isString(configs.password)) {
         throw new Error('Please provide valid password for database');
     }
-    await execShell(`sudo mysql -u root -e 'CREATE DATABASE ${configs.database};'`);
+    await execShell(`sudo mysql -u root -p='' -e 'CREATE DATABASE ${configs.database};'`);
     await execShell(
-        `sudo mysql -u root -e "CREATE USER '${configs.user}'@'localhost' IDENTIFIED BY '${configs.password}'";`);
-    await execShell(`sudo mysql -u root -e "GRANT ALL ON ${configs.database}.* TO '${configs.user}'@'localhost'";`);
-    await execShell(`sudo mysql -u root -e "FLUSH PRIVILEGES;";`);
+        `sudo mysql -u root -e -p='' "CREATE USER '${configs.user}'@'localhost' IDENTIFIED BY '${configs.password}'";`);
+    await execShell(`sudo mysql -u root -p='' -e "GRANT ALL ON ${configs.database}.* TO '${configs.user}'@'localhost'";`);
+    await execShell(`sudo mysql -u root -p='' -e "FLUSH PRIVILEGES;";`);
 }
