@@ -7,9 +7,16 @@ import {isMySqlActive, startMySql} from "../../src/setupIntegrationTest/install.
 let expect = chai.expect;
 
 describe('integration tests for libtestsUtils',function (){
-    it('install mysql test', async function () {
-        const retVal = await installMysql();
-        expect(retVal.length).gt(0);
+    describe('install test', function (){
+        it('install mysql test', async function () {
+            const retVal = await installMysql();
+            expect(retVal.length).gt(0);
+        });
+        it('uninstall mysql test', async function () {
+            const retVal = await uninstallMysql();
+            expect(retVal.length).gt(0);
+        });
+
     });
     it('Setup database should pass', async function () {
         const retVal = await installMysql();
@@ -20,16 +27,14 @@ describe('integration tests for libtestsUtils',function (){
             console.log(activateStatus);
             expect(retVal.length).gt(0);
             const configs = getMySqlConfigs();
+            console.log(JSON.stringify(configs));
             await setUpMySQL(configs);
 
         } catch (e) {
             console.log(e.toString());
         }
+        await uninstallMysql();
+    });
 
-    });
-    it('uninstall mysql test', async function () {
-        const retVal = await uninstallMysql();
-        expect(retVal.length).gt(0);
-    });
 
 });
