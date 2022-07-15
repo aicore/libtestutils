@@ -1,5 +1,6 @@
 import child_process from 'child_process';
 import {isString} from "@aicore/libcommonutils";
+// @INCLUDE_IN_API_DOCS
 
 /** This function helps to execute shell command
  * @param {String} cmd - shell command to be executed
