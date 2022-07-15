@@ -1,16 +1,22 @@
 /*global describe, it*/
 import * as chai from 'chai';
-import {installMysql, setUpMySQL, uninstallMysql} from "../../src/index.js";
+import {setUpMySQL} from "../../src/index.js";
 
 let expect = chai.expect;
 
-describe('integration tests for libtestsUtils', function () {
+describe('integration tests for lib-testsUtils', function () {
     it('Setup database should pass', async function () {
+        let isExecptionOccured = false;
         try {
             const configs = await setUpMySQL();
             console.log(`${JSON.stringify(configs)}`);
+            expect(configs.port).to.eq('3306');
+
+            expect(configs.host).to.eq('localhost');
         } catch (e) {
             console.log(e.toString());
+            isExecptionOccured = true;
         }
+        expect(false).to.eq(false);
     });
 });
