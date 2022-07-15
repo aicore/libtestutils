@@ -23,8 +23,6 @@ describe('integration tests for libtestsUtils',function (){
     it('Setup database should pass', async function () {
         const retVal = await installMysql();
         try {
-           const mysqlStatus = await isMySqlActive();
-           console.log(mysqlStatus);
            const activateStatus = await startMySql();
            console.log(activateStatus);
 //           expect(retVal.length).gt(0);
