@@ -16,6 +16,8 @@ describe('This will test src/setupIntegrationTest/userMangement.js', function ()
         try {
             const  configs = getMySqlConfigs();
             const newVar = await setUpMySQL(configs);
+            expect(configs.host).to.eql('localhost');
+            expect(configs.port).to.eql('3306');
 
         } catch (e) {
             exceptionOccurred = true;
@@ -24,66 +26,4 @@ describe('This will test src/setupIntegrationTest/userMangement.js', function ()
 
         child_process.exec = savedExec;
     });
-    it('setUpMySQL should fail for invalid user', async function () {
-        const savedExec = child_process.exec;
-        child_process.exec = function (cmd, callback) {
-            callback(null, 'success', null);
-        };
-        let exceptionOccurred = false;
-        try {
-            let  configs = getMySqlConfigs();
-            configs.user = null;
-            const newVar = await setUpMySQL(configs);
-
-        } catch (e) {
-            expect(e.toString()).to.eql('Error: Please provide valid Database user');
-            exceptionOccurred = true;
-        }
-        expect(exceptionOccurred).to.eql(true);
-
-        child_process.exec = savedExec;
-
-    });
-
-    it('setUpMySQL should fail for invalid db', async function () {
-        const savedExec = child_process.exec;
-        child_process.exec = function (cmd, callback) {
-            callback(null, 'success', null);
-        };
-        let exceptionOccurred = false;
-        try {
-            let  configs = getMySqlConfigs();
-            configs.database = null;
-            const newVar = await setUpMySQL(configs);
-
-        } catch (e) {
-            expect(e.toString()).to.eql('Error: Please provide valid Database Name');
-            exceptionOccurred = true;
-        }
-        expect(exceptionOccurred).to.eql(true);
-
-        child_process.exec = savedExec;
-
-    });
-    it('setUpMySQL should fail for invalid password', async function () {
-        const savedExec = child_process.exec;
-        child_process.exec = function (cmd, callback) {
-            callback(null, 'success', null);
-        };
-        let exceptionOccurred = false;
-        try {
-            let  configs = getMySqlConfigs();
-            configs.password = null;
-            const newVar = await setUpMySQL(configs);
-
-        } catch (e) {
-            expect(e.toString()).to.eql('Error: Please provide valid password for database');
-            exceptionOccurred = true;
-        }
-        expect(exceptionOccurred).to.eql(true);
-
-        child_process.exec = savedExec;
-
-    });
-
 });

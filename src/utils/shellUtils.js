@@ -25,7 +25,6 @@ export function execShell(cmd) {
                 return;
             }
             const successMessage = `stdout: ${stdout}`;
-            console.log(successMessage);
             resolve(successMessage);
         });
     });
