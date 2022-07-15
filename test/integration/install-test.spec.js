@@ -28,8 +28,8 @@ describe('integration tests for libtestsUtils',function (){
         try {
             //const mysqlStatus = await isMySqlActive();
             // console.log(mysqlStatus);
-            const activateStatus = await startMySql();
-            console.log(activateStatus);
+            //const activateStatus = await startMySql();
+           // console.log(activateStatus);
           //  expect(retVal.length).gt(0);
             const configs = getMySqlConfigs();
             console.log(JSON.stringify(configs));
