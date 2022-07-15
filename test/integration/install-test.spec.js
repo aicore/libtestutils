@@ -6,7 +6,7 @@ let expect = chai.expect;
 
 describe('integration tests for lib-testsUtils', function () {
     it('Setup database should pass', async function () {
-        let isExecptionOccured = false;
+        let isExceptionOccurred = false;
         try {
             const configs = await setUpMySQL();
             console.log(`${JSON.stringify(configs)}`);
@@ -15,7 +15,7 @@ describe('integration tests for lib-testsUtils', function () {
             expect(configs.host).to.eq('localhost');
         } catch (e) {
             console.log(e.toString());
-            isExecptionOccured = true;
+            isExceptionOccurred = true;
         }
         expect(false).to.eq(false);
     });
