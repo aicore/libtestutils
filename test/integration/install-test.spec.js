@@ -17,6 +17,6 @@ describe('integration tests for lib-testsUtils', function () {
             console.log(e.toString());
             isExceptionOccurred = true;
         }
-        expect(false).to.eq(false);
+        expect(isExceptionOccurred).to.eq(false);
     });
 });
