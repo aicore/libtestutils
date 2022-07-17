@@ -1,6 +1,6 @@
 {
   "name": "@aicore/libtestutils",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "This library contains set of test utilities used by core.ai for running integration tests",
   "main": "src/index.js",
   "type": "module",
