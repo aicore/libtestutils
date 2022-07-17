@@ -56,9 +56,9 @@
     "glob": "8.0.3",
     "husky": "8.0.1",
     "mocha": "10.0.0",
-    "@aicore/libmysql": "1.0.10"
+    "@aicore/libmysql": "1.0.11"
   },
   "dependencies": {
-    "@aicore/libcommonutils": " ^1.0.6"
+    "@aicore/libcommonutils": "1.0.10"
   }
 }

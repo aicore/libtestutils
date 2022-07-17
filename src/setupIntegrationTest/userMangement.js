@@ -1,5 +1,5 @@
 import {execShell} from "../utils/shellUtils.js";
-import {getMySqlConfigs} from "@aicore/libmysql/src/utils/configs.js";
+import {getMySqlConfigs} from "@aicore/libcommonutils";
 // @INCLUDE_IN_API_DOCS
 
 /** This function helps to set up mysql for running integration tests
