@@ -48,17 +48,17 @@
   "devDependencies": {
     "@commitlint/cli": "16.3.0",
     "@commitlint/config-conventional": "16.2.4",
-    "c8": "7.11.3",
+    "c8": "7.12.0",
     "chai": "4.3.6",
     "cli-color": "2.0.3",
     "documentation": "13.2.5",
-    "eslint": "8.19.0",
+    "eslint": "8.21.0",
     "glob": "8.0.3",
     "husky": "8.0.1",
     "mocha": "10.0.0",
     "@aicore/libmysql": "1.0.11"
   },
   "dependencies": {
-    "@aicore/libcommonutils": "1.0.10"
+    "@aicore/libcommonutils": "1.0.11"
   }
 }
