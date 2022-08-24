@@ -3,7 +3,7 @@ import * as chai from 'chai';
 import {installMysql, uninstallMysql} from "../../../src/setupIntegrationTest/install.js";
 import child_process from "child_process";
 import {setUpMySQL} from "../../../src/index.js";
-import {getMySqlConfigs} from "@aicore/libmysql/src/utils/configs.js";
+import {getMySqlConfigs} from "@aicore/libcommonutils";
 let expect = chai.expect;
 
 describe('This will test src/setupIntegrationTest/userMangement.js', function () {
