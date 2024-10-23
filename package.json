@@ -49,13 +49,13 @@
     "@commitlint/cli": "17.8.1",
     "@commitlint/config-conventional": "17.8.1",
     "c8": "7.14.0",
-    "chai": "5.1.0",
+    "chai": "5.1.2",
     "cli-color": "2.0.4",
     "documentation": "14.0.3",
-    "eslint": "8.57.0",
+    "eslint": "8.57.1",
     "glob": "8.1.0",
     "husky": "8.0.3",
-    "mocha": "10.4.0",
+    "mocha": "10.7.3",
     "@aicore/libmysql": "1.0.41"
   },
   "dependencies": {
